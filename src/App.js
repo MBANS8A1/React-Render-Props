@@ -6,14 +6,14 @@ const products = Array.from({ length: 20 }, () => {
   return {
     productName: faker.commerce.productName(),
     description: faker.commerce.productDescription(),
-    price: faker.commerce.price(),
+    price: faker.commerce.price()
   };
 });
 
 const companies = Array.from({ length: 15 }, () => {
   return {
     companyName: faker.company.name(),
-    phrase: faker.company.catchPhrase(),
+    phrase: faker.company.catchPhrase()
   };
 });
 
@@ -28,13 +28,13 @@ function ProductItem({ product }) {
 }
 
 function CompanyItem({ company, defaultVisibility }) {
-  const [isVisible, setIsVisisble] = useState(defaultVisibility);
+  const [isVisible, setIsVisible] = useState(defaultVisibility);
 
   return (
     <li
       className="company"
-      onMouseEnter={() => setIsVisisble(true)}
-      onMouseLeave={() => setIsVisisble(false)}
+      onMouseEnter={() => setIsVisible(true)}
+      onMouseLeave={() => setIsVisible(false)}
     >
       <p className="company-name">{company.companyName}</p>
       {isVisible && (
